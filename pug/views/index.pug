@@ -1,0 +1,16 @@
+extends layouts/base.pug
+block content
+  h1 Lista de productos
+    table(class='table')
+      thead
+        tr
+          th(scope='col') Nombre
+          th(scope='col') Precio
+          th(scope='Img') Imagen
+      tbody
+        each p in objProductos
+          tr
+            td= p.nombre
+            td= p.precio 
+            td 
+              img(class='img-thumbnail rounded' src=p.img )

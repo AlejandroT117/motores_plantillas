@@ -1,0 +1,20 @@
+extends layouts/base.pug
+block content
+  h1 Añade un nuevo producto
+  div(class='col-md-6 mb-3')
+    form(action='/add' method='post')
+      div(class='form-group')
+        label(for='nombre') Nombre del Producto
+        input(class="form-control" name='nombre' type='text' required)
+      div(class='form-group')
+        label(for='precio') Precio del Producto
+        input(class="form-control" name='precio' required type='number')
+      div(class='form-group')
+        label(for='img') URL a Imagen del Producto
+        input(class="form-control" name='img' required type='url' pattern="https://.*")
+      div(class='form-group')
+        label(for='stock') Stock disponible
+        input(class="form-control" name='stock' type='number' required)
+      div
+        button(type="submit" class="btn btn-primary") Enviar
+    
